@@ -1,7 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import GitCard from "./Components/GitCard";
-import FollowersCard from "./Components/FollowersCard";
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  text-align: center;
+`
 
 class App extends React.Component{
   constructor() {
@@ -32,7 +36,7 @@ class App extends React.Component{
   render() {
   return (
     <div className="App">
-      <h1>{this.state.data.login}'s followers:</h1>
+      <Title>{this.state.data.login}'s followers:</Title>
       <div className="gitCard">
           <GitCard props={this.state.followers} />
       </div>
